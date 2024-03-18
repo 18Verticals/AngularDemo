@@ -3,9 +3,12 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.2.
 
 ## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
+In order to run Angular project, there are some steps to follow
+1. clone the repo in a proper folder.
+2. open terminal in that folder and run command 'npm install'. This step will install all the required packages to run the angular app in your local machine
+3. Run 'ng serve'
+4. After sucessfully completing the task you will see one port in the cmd 'http://localhost:4200'
+5. you will find your project up and running on that port
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.

@@ -11,6 +11,8 @@
                 <i class="fa fa-tachometer" aria-hidden="true"></i> &nbsp; <span>Dashboard</span>
             </a>
         </li>
+
+        <!-- ======================================================================ADMIN============================================================================= -->
         @if (Role() == 'admin') {
             <li class=""  (click)="onNavChange('Department','fa-building-o')">
                 <i class="fa fa-building-o" aria-hidden="true"></i> &nbsp; <span>Department</span>
@@ -21,6 +23,7 @@
                 </a>
             </li>
         }
+        <!-- ======================================================================ALL USER============================================================================= -->
         @if (Role()) {
         <li class=""  (click)="onNavChange('Salary','fa-money')"
         data-bs-toggle="collapse" href="#salarySubCategory" role="button" aria-expanded="false">
@@ -60,10 +63,11 @@
             </ul>
         </div>
     }
+        <!-- ======================================================================EMPLOYEE============================================================================= -->
 
     @if (Role() == 'employee') {
         <li class=""  (click)="onNavChange('Tasks','fa-tasks')">
-            <a class="nav-link">
+            <a class="nav-link" [routerLink]="['tasks']">
             <i class="fa fa-tasks" aria-hidden="true"></i> &nbsp; <span>Tasks</span>
             </a>
         </li>

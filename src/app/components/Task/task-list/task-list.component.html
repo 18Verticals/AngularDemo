@@ -1,0 +1,44 @@
+<div class="row p-3" style="background-color: aliceblue;">
+<div class="col-12">
+    <div class="row">
+        <h1><i class="fa fa-tasks"></i> Tasks</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Start Date</th>
+                    <th scope="col">End Date</th>
+                    <th scope="col">Assigned To</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    @for (item of taskList(); track $index) {
+                      <tr>
+                    <th scope="row">{{item.Id}}</th>
+                    <td>{{item.Title}}</td>
+                    <td>{{item.Description}}</td>
+                    <td>{{item.Status}}</td>
+                    <td>{{item.StartDate}}</td>
+                    <td>{{item.EndDate}}</td>
+                    <td>{{item.AssignedId}}</td>
+                  </tr>
+                }
+                </tbody>
+              </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <button type="button" class="btn btn-outline-primary" (click)="createTask()">Create Task</button>
+        </div>
+    </div>
+</div>
+</div>
