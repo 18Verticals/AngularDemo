@@ -12,7 +12,8 @@ export class AuthService {
   private userInfo = signal<ILoggedInUser>({
     Role:'',
     AuthToken:'',
-    Username:''
+    Username:'',
+    Id:null
   });
   public Role = computed(()=>{
     return this.userInfo().Role
@@ -38,7 +39,8 @@ export class AuthService {
         this.userInfo.set({
           AuthToken:res.authToken,
           Role:res.role,
-          Username:res.username
+          Username:res.username,
+          Id:res.id
         });
         var userInfo = JSON.stringify(this.userInfo());
         localStorage.setItem('userInfo',userInfo);
@@ -53,7 +55,8 @@ export class AuthService {
         this.userInfo.set({
           AuthToken:res.authToken,
           Role:res.role,
-          Username:res.username
+          Username:res.username,
+          Id:res.id
         });
         var userInfo = JSON.stringify(this.userInfo());
         localStorage.setItem('userInfo',userInfo);
@@ -77,5 +80,6 @@ export class AuthService {
 export interface ILoggedInUser{
   Role:string,
   AuthToken:string,
-  Username:string
+  Username:string,
+  Id:number | null
 }
